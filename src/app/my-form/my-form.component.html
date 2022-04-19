@@ -1,0 +1,70 @@
+<body class="theme-cyan ls-toggle-menu" style="overflow: auto;">
+    <div class="page-loader-wrapper" style="display: none;background-color: aquamarine;">
+        <div class="loader">
+            <div class="m-t-30"><img class="zmdi-hc-spin" src="../images/logo.svg" width="48" height="48" alt="Oreo"></div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <nav class="navbar p-l-5 p-r-5" style="background-color:#244c89;">
+        <ul class="nav navbar-nav navbar-left container">
+            <li>
+                <div class="navbar-header pt-2 pb-2">
+                    <a class="navbar-brand" href="#!">
+                        <img src="assets/images/white-logo.png" alt="" width="360" height="51px">
+                    </a>
+                </div>
+            </li>
+            <li class="float-right"> <a routerLink="/login" class="mega-menu" data-close="true" (click)="clearSession()">
+                    {{userDetails?.email?userDetails?.email:'NA'}} <i class="zmdi zmdi-power"></i>Logout</a></li>
+            <li class="float-right"> <a routerLink="/dashboard" class="mega-menu" title="Events">Dashboard</a></li>
+        </ul>
+    </nav>
+    <!-- Chat-launcher -->
+    <!-- Main Content -->
+    <section>
+        <div class="container" style="margin-top: 98px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                
+                                <div class="body pl-5 pr-5 pb-5">
+                                    <div class="clearfix mb-3"></div>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="table-responsive active" id="All">
+                                                <div class="table-responsive active">
+                                                    <div class="row" style="width: 98%;">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <input type="txt" class="form-control" placeholder="Events Title ">
+                                                            </div>
+                                                        </div>
+                                                     
+                                                    </div>
+                                                    <div class="row" style=" margin-top: 20px; width: 98%;">
+                                                        <div class="col-md-1" style="margin-top: -4px;" (click)="createDynamicform()">
+                                                            <a class="btn btn-primary waves-effect" > Update</a>
+                                                        </div> &nbsp;&nbsp;
+                                                 
+                                                    </div>
+                                                    <div style="min-height: 100px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+Response-
+<ngx-json-viewer [json]="respData"></ngx-json-viewer>
+
+</body>

@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "d2e4ea08-783d-474d-81be-f14d5feb80a6",
+		"name": "STPI-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Add Menu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"events\",\r\n    \"link\": \"https://apiary.stpi.in/events\",\r\n    \"priority\": 5,\r\n    \"isChild\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/addMenu",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"addMenu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Menu List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getMenuList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getMenuList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin User",
+			"item": [
+				{
+					"name": "Setting",
+					"item": [
+						{
+							"name": "Add Setting",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"company\": \"Blockcube\",\r\n    \"logo\"   : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"email\"  : \"yogesh.dubey@blockcube.co\",\r\n    \"website\": \"www.blockcube.co\",\r\n    \"contact_no\": \"0123456789\",\r\n    \"address_one\": {\r\n        \"address\": \"Sector -48\",\r\n        \"city\": \"Gurugram\",\r\n        \"state\": \"Haryana\",\r\n        \"pincode\": \"201301\",\r\n        \"contact_no\": \"0123456789\"\r\n    },\r\n    \"address_two\": {\r\n        \"address\": \"Sector -48\",\r\n        \"city\": \"Gurugram\",\r\n        \"state\": \"Haryana\",\r\n        \"pincode\": \"201301\",\r\n        \"contact_no\": \"0123456789\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/addSetting",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"addSetting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Setting",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"company\": \"Blockcube\",\r\n    \"logo\"   : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"email\"  : \"yogesh.dubey@blockcube.co\",\r\n    \"website\": \"www.blockcube.co\",\r\n    \"contact_no\": \"0123456789\",\r\n    \"address_one\": {\r\n        \"address\": \"Sector -48\",\r\n        \"city\": \"Gurugram\",\r\n        \"state\": \"Haryana\",\r\n        \"pincode\": \"201301\",\r\n        \"contact_no\": \"0123456789\"\r\n    },\r\n    \"address_two\": {\r\n        \"address\": \"Sector -48\",\r\n        \"city\": \"Gurugram\",\r\n        \"state\": \"Haryana\",\r\n        \"pincode\": \"201301\",\r\n        \"contact_no\": \"0123456789\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/updateSetting",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateSetting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Setting",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/getSetting",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"getSetting"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Yogesh Dubey\",\r\n    \"email\" : \"yogesh.dubey@blockcube.co\",\r\n    \"password\": \"test123\",\r\n    \"type\": \"admin\",\r\n    \"image\": \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/signUp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Yogesh Dubey\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Yogesh Dubey\",\r\n    \"email\" : \"yogesh.dubey@blockcube.co\",\r\n    \"password\": \"test123\",\r\n    \"type\": \"admin\",\r\n    \"image\": \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/deleteUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Add Events",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"events\",\r\n    \"title\"         : \"new events\",\r\n    \"description\"   : \"this is demo\",\r\n    \"image\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"link\"          : \"https://blockcube.co\",\r\n    \"platform\"      : \"event\",\r\n    \"startDateTime\" : \"13-09-2021\",\r\n    \"endDateTime\"   : \"14-09-2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/addEvents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"addEvents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Events",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"events\",\r\n    \"title\"         : \"new events updated\",\r\n    \"description\"   : \"this is demo\",\r\n    \"image\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"link\"          : \"https://blockcube.co\",\r\n    \"platform\"      : \"event\",\r\n    \"startDateTime\" : \"13-09-2021\",\r\n    \"endDateTime\"   : \"14-09-2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateEvents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateEvents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/getEvents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getEvents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Events",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventId\": \"613f93a0b4b27a682068ab69\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/deleteEvents",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteEvents"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Common",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/yoges/Downloads/amazon.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/uploadFile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"uploadFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"apiary mission\",\r\n    \"title\"         : \"new data\",\r\n    \"description\"   : \"this is demo\",\r\n    \"image\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"icon\"          : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"header\"        : \"event\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/addData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"addData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"apiary mission\",\r\n    \"title\"         : \"new data\",\r\n    \"description\"   : \"this is demo\",\r\n    \"image\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"icon\"          : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"header\"        : \"event\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/getData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataId\": \"61402fc703c6ba0dac681560\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/deleteData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"item": [
+				{
+					"name": "Create Contact Us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Yogesh\",\r\n    \"email\": \"yogesh.dubey@blockcube.co\",\r\n    \"message\": \"This is demo!\",\r\n    \"captcha\": \"ty85u6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/createContactUs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"createContactUs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact Us",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/getContactUs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getContactUs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media & Gallery",
+			"item": [
+				{
+					"name": "Homepage Media",
+					"item": [
+						{
+							"name": "Add Homepage Media",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"type\"          : \"partners\",\r\n    \"image\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/addHomepageMedia",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"addHomepageMedia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Homepage Media",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"type\"  : \"partners\",\r\n    \"image\" : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/updateHomepageMedia",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateHomepageMedia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Homepage Media",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/getHomepageMedia",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"getHomepageMedia"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Homepage Media",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mediaId\" : \"61403e0305165c4b44bccfdb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/deleteHomepageMedia",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"deleteHomepageMedia"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Gallery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"apiary mission\",\r\n    \"sectionType\"   : \"second section\", \r\n    \"title\"         : \"new data\",\r\n    \"shortDescription\": \"this is short description\",\r\n    \"description\"   : \"this is demo\",\r\n    \"path\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"Date\"        : \"2021-09-14T05:14:47.774+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/addGallery",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"addGallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gallery",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\"          : \"apiary mission\",\r\n    \"sectionType\"   : \"second section\", \r\n    \"title\"         : \"new data\",\r\n    \"shortDescription\": \"this is short description\",\r\n    \"description\"   : \"this is demo\",\r\n    \"path\"         : \"public/files/16315331890662a4ce01fd3ff6a76685f3cd4b1493832.jpg\",\r\n    \"Date\"        : \"2021-09-14T05:14:47.774+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateGallery",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateGallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Gallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isApproved\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/getGallery",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"getGallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gallery",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"galleryId\": \"614033a35c5c2d3d14136c44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/deleteGallery",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteGallery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
